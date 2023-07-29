@@ -1,5 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Box, TextField, Button, Grid, styled } from '@mui/material';
+import {
+  Box,
+  TextField,
+  Button,
+  Grid,
+  styled,
+  InputLabel,
+} from '@mui/material';
 import { SketchPicker } from 'react-color';
 import chroma from 'chroma-js';
 import React = require('react');
@@ -14,8 +21,14 @@ const shades = {
 const FlexBox = styled(Box)`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-direction: columns;
+  align-items: center;  
+`;
+
+const StyledInputLabel = styled(InputLabel)`
+  && {
+    transform: none !important;
+    transition: none !important;
+  }
 `;
 
 function ColorInputField({ color, onChange }) {
@@ -30,11 +43,16 @@ function ColorInputField({ color, onChange }) {
             }
           />
         </FlexBox>
+        <StyledInputLabel shrink={false} htmlFor="hex-color">
+          Hex Color
+        </StyledInputLabel>
         <TextField
-          label="Hex Color"
+          id="hex-color"
           value={color}
-          onChange={(e: { target: { value: any } }) => onChange(e.target.value)}
-        />
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange(e.target.value)
+          }
+        />{' '}
       </Box>
     </>
   );
@@ -72,10 +90,13 @@ function ColorPicker() {
   return (
     <>
       <Box sx={{ mb: 3 }}>
+        <StyledInputLabel shrink={false} htmlFor="color-length">
+          Color Length
+        </StyledInputLabel>
         <TextField
-          label="Number of Colors"
+          id="color-length"
           value={numColors}
-          onChange={(e: { target: { value: string } }) => {
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const num = parseInt(e.target.value, 10);
             if (!isNaN(num) && num > 0) {
               setNumColors(num);
@@ -116,7 +137,7 @@ function ColorPicker() {
           {palette.map((c: any, i: number) => (
             <Grid
               item
-              xs={4}
+              xs={6}
               mg={3}
               lg={2}
               key={i}
