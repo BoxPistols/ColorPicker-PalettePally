@@ -137,7 +137,7 @@ function ColorPicker() {
             <Grid
               item
               xs={6}
-              mg={3}
+              md={3}
               lg={2}
               key={i}
               style={{ display: 'flex', flexDirection: 'column' }}
