@@ -4,10 +4,10 @@ import { SketchPicker } from 'react-color';
 import chroma from 'chroma-js';
 
 const shades = {
-  main: -0.5,
-  dark: -1.5,
-  light: 1.25,
-  lighter: 3.75,
+  main: 0,
+  dark: -1,
+  light: 2,
+  lighter: 5,
 };
 
 const FlexBox = styled(Box)`
@@ -54,7 +54,7 @@ function ColorPicker() {
           const [h, s, l] = baseHSL;
           return [
             shade,
-            chroma.hsl(h, s * 0.9, l * 0.9 + adjustment * 0.1).hex(),
+            chroma.hsl(h, s * 0.8, l * 0.8 + adjustment * 0.1).hex(),
           ];
         })
       );
@@ -63,7 +63,7 @@ function ColorPicker() {
   };
 
   return (
-    <Container sx={{ maxWidth: '780px' }}>
+    <Container sx={{ maxWidth: 'lg' }}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <TextField
@@ -78,12 +78,12 @@ function ColorPicker() {
           />
         </Grid>
         {Array.from({ length: numColors }, (_, i) => (
-          <Grid item xs={6} md={4} lg={3} key={i}>
+          <Grid item xs={6} sm={4} md={3} lg={2} key={i}>
             <p>Color {i + 1}</p>
             <TextField
               label="HEX"
               value={color[i]}
-              onChange={(e) => {
+              onChange={(e: { target: { value: any } }) => {
                 const newColor = [...color];
                 newColor[i] = e.target.value;
                 setColor(newColor);
@@ -105,7 +105,7 @@ function ColorPicker() {
         </Grid>
         {palette &&
           palette.map((c, i) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={i}>
+            <Grid item xs={6} sm={4} md={3} lg={2} key={i}>
               <h2>Color {i + 1}</h2>
               {Object.entries(c).map(([shade, color]) => (
                 <Box
