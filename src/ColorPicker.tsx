@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   TextField,
@@ -9,7 +9,6 @@ import {
 } from '@mui/material';
 import { SketchPicker } from 'react-color';
 import chroma from 'chroma-js';
-import React = require('react');
 
 const shades = {
   main: 0,
