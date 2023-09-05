@@ -90,7 +90,7 @@ function ColorPicker() {
     <>
       <Box sx={{ mb: 3 }}>
         <StyledInputLabel shrink={false} htmlFor="color-length">
-          カラー数
+          カラー数　 ↓↑キー操作
         </StyledInputLabel>
         <TextField
           id="color-length"
