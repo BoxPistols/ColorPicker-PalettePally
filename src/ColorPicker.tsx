@@ -90,7 +90,7 @@ function ColorPicker() {
     <>
       <Box sx={{ mb: 3 }}>
         <StyledInputLabel shrink={false} htmlFor="color-length">
-          Color Length
+          カラー数
         </StyledInputLabel>
         <TextField
           id="color-length"
@@ -111,7 +111,7 @@ function ColorPicker() {
           color="primary"
           onClick={handleGenerateClick}
         >
-          Generate Palette
+          カラーパレット生成 / 再生成
         </Button>
       </Box>
       <FlexBox sx={{ flexDirection: 'columns', gap: 2 }}>
