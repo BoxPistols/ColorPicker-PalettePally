@@ -42,7 +42,7 @@ function ColorInputField({ color, onChange }) {
             }
           />
         </FlexBox>
-        <StyledInputLabel shrink={false} htmlFor="hex-color">
+        <StyledInputLabel shrink={false} htmlFor="hex-color" size="small">
           Hex Color
         </StyledInputLabel>
         <TextField
@@ -91,9 +91,10 @@ function ColorPicker() {
     <>
       <Box sx={{ mb: 3 }}>
         <StyledInputLabel shrink={false} htmlFor="color-length">
-          カラー数　 ↓↑キー操作
+          カラー数　↓↑
         </StyledInputLabel>
         <TextField
+          size="small"
           id="color-length"
           value={numColors}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -105,7 +106,7 @@ function ColorPicker() {
           type="number"
           inputProps={{ min: 1, max: 24 }}
           fullWidth
-          sx={{ mb: 1 }}
+          sx={{ mb: 1, width: 100, marginRight: 2 }}
         />
         <Button
           variant="contained"
@@ -149,6 +150,7 @@ function ColorPicker() {
                 <>
                   <Box
                     m={1}
+                    px={2}
                     key={shade}
                     sx={{
                       flexGrow: 1,
