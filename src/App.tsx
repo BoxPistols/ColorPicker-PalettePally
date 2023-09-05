@@ -1,6 +1,6 @@
 import * as React from 'react';
-import './style.css';
 import ColorPicker from './ColorPicker';
+import './style.css';
 
 export default function App() {
   return (
