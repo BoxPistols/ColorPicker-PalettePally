@@ -33,8 +33,22 @@ const StyledInputLabel = styled(InputLabel)`
 function ColorInputField({ color, onChange }) {
   return (
     <>
-      <Box>
-        <FlexBox sx={{ mb: 3, gap: 1 }}>
+      <Box
+        sx={{
+          display: 'block',
+          maxWidth: '90vw',
+          overflow: 'hidden',
+          overflowX: 'scroll',
+          pb: 2,
+        }}
+      >
+        <FlexBox
+          sx={{
+            mb: 1.5,
+            gap: 1,
+            border: '1px solid #f9f9fc',
+          }}
+        >
           <SketchPicker
             color={color}
             onChange={(updatedColor: { hex: any }) =>
@@ -52,7 +66,8 @@ function ColorInputField({ color, onChange }) {
             onChange(e.target.value)
           }
           size="small"
-        />{' '}
+          sx={{ pl: 0 }}
+        />
       </Box>
     </>
   );

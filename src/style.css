@@ -1,8 +1,25 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+html {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
-  padding: 1vh 3vw;
+  padding: 0.5vh 3vw;
   box-sizing: border-box;
   font-family: Futura, sans-serif;
   color: rgb(38, 61, 85);
   font-size: 14px;
   line-height: 1.8;
+}
+
+h1 {
+  line-height: 1.2;
+  margin: 1rem 0 1em;
+  color: tomato;
 }
