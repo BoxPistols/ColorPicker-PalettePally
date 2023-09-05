@@ -51,6 +51,7 @@ function ColorInputField({ color, onChange }) {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             onChange(e.target.value)
           }
+          size="small"
         />{' '}
       </Box>
     </>
