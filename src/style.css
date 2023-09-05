@@ -3,6 +3,8 @@ body {
   box-sizing: border-box;
   font-family: Futura, sans-serif;
   color: rgb(38, 61, 85);
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 h1,

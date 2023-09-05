@@ -34,7 +34,7 @@ function ColorInputField({ color, onChange }) {
   return (
     <>
       <Box>
-        <FlexBox sx={{ mb: 2, gap: 1 }}>
+        <FlexBox sx={{ mb: 3, gap: 1 }}>
           <SketchPicker
             color={color}
             onChange={(updatedColor: { hex: any }) =>
@@ -132,7 +132,7 @@ function ColorPicker() {
         ))}
       </FlexBox>
       {palette && (
-        <Grid container spacing={2}>
+        <Grid container spacing={2} mt={2}>
           {palette.map((c: any, i: number) => (
             <Grid
               item
