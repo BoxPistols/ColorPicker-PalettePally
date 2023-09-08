@@ -20,7 +20,7 @@ const shades = {
 const FlexBox = styled(Box)`
   display: flex;
   justify-content: space-between;
-  align-items: center;  
+  align-items: center;
 `;
 
 const StyledInputLabel = styled(InputLabel)`
@@ -36,10 +36,9 @@ function ColorInputField({ color, onChange }) {
       <Box
         sx={{
           display: 'block',
-          maxWidth: '90vw',
-          overflow: 'hidden',
-          overflowX: 'scroll',
           pb: 2,
+          overflow: 'auto',
+          maxWidth: '90vw',
         }}
       >
         <FlexBox
@@ -131,7 +130,14 @@ function ColorPicker() {
           カラーパレット生成 / 再生成
         </Button>
       </Box>
-      <FlexBox sx={{ flexDirection: 'columns', gap: 2 }}>
+      <FlexBox
+        sx={{
+          flexDirection: 'columns',
+          gap: 2,
+          overflow: 'auto',
+          maxWidth: '90vw',
+        }}
+      >
         {Array.from({ length: numColors }, (_, i) => (
           <React.Fragment key={i}>
             <FlexBox sx={{ display: 'block' }}>
