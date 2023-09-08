@@ -89,14 +89,16 @@ function ColorPicker() {
     const newPalette = color.map((c) => {
       const baseColor = chroma(c);
       const baseHSL = baseColor.hsl();
-      // FIXME:Property 'fromEntries' does not exist on type 'ObjectConstructor'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2019' or later.
-      return Object.fromEntries(
-        // Property 'entries' does not exist on type 'ObjectConstructor'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2017' or later
+      const adjustedColors = Object.fromEntries(
         Object.entries(shades).map(([shade, adjustment]) => {
+          if (shade === 'main') {
+            return [shade, baseColor.hex()]; // mainカラーは元の色と一致させる
+          }
           const [h, s, l] = baseHSL;
-          return [shade, chroma.hsl(h, s * 0.85, l + adjustment * 0.1).hex()]; // 彩度を抑える
+          return [shade, chroma.hsl(h, s * 0.85, l + adjustment * 0.1).hex()];
         })
       );
+      return adjustedColors;
     });
     setPalette(newPalette);
   };
