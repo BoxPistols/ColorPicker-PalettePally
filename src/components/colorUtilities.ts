@@ -4,7 +4,7 @@ import chroma from 'chroma-js';
  * 色相調整値
  */
 const shades = {
-  main: 1,
+  main: 0,
   dark: -2,
   light: 1.25,
   lighter: 4,
@@ -17,7 +17,7 @@ const shades = {
  */
 export const initialColors = (numColors: number): string[] =>
   Array.from({ length: numColors }, (_, i) =>
-    chroma.hsl((i * 360) / numColors, 0.85, 0.5).hex()
+    chroma.hsl((i * 360) / numColors, 0.88, 0.38).hex()
   );
 
 /**

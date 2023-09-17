@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Box, styled } from '@mui/material';
 import { initialColors } from './colorUtilities';
-import ColorInputField from './ColorInputField';
-import PaletteGrid from './PaletteGrid';
+import PaletteGrid from '././ColorPickerComponents/PaletteGrid';
 import ColorCountSetting from './ColorPickerComponents/ColorCountSetting';
 import GeneratePaletteArea from './ColorPickerComponents/GeneratePaletteArea';
+import ColorInputField from './ColorPickerComponents/ColorInputField';
 
 // スタイル定義
 const FlexBox = styled(Box)`
