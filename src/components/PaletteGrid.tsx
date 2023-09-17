@@ -2,11 +2,17 @@ import React from 'react';
 import { Box, Grid } from '@mui/material';
 import chroma from 'chroma-js';
 
-interface Props {
-  palette: any[];
+/**
+ * Propの型定義
+ */
+interface PaletteGridProps {
+  palette: any[]; // 表示するカラーパレット
 }
 
-const PaletteGrid: React.FC<Props> = ({ palette }) => {
+/**
+ * カラーパレット(色相彩度明度バリエーション)をグリッドで表示するコンポーネント
+ */
+const PaletteGrid: React.FC<PaletteGridProps> = ({ palette }) => {
   return (
     <Grid container spacing={2} mt={2}>
       {palette.map((c, i) => (
@@ -31,11 +37,9 @@ const PaletteGrid: React.FC<Props> = ({ palette }) => {
                 color: chroma(color).luminance() > 0.5 ? 'black' : 'white',
               }}
             >
-              <>
-                <Box p={1} sx={{ borderRedius: '6px' }}>
-                  {shade}: {color}
-                </Box>
-              </>
+              <Box p={1} sx={{ borderRadius: '6px' }}>
+                {shade}: {color}
+              </Box>
             </Box>
           ))}
         </Grid>

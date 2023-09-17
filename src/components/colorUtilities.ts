@@ -1,17 +1,30 @@
 import chroma from 'chroma-js';
 
+/**
+ * 色相調整値
+ */
 const shades = {
-  main: 0,
+  main: 1,
   dark: -2,
   light: 1.25,
   lighter: 4,
 };
 
+/**
+ * 初期色を生成します。
+ * @param {number} numColors - 生成する色の数
+ * @return {string[]} 生成した色のリスト（HEX形式）
+ */
 export const initialColors = (numColors: number): string[] =>
   Array.from({ length: numColors }, (_, i) =>
     chroma.hsl((i * 360) / numColors, 0.85, 0.5).hex()
   );
 
+/**
+ * カラーパレットを生成します。
+ * @param {string[]} color - ベースとなる色のリスト（HEX形式）
+ * @return {any[]} 生成したカラーパレット
+ */
 export const generatePalette = (color: string[]) => {
   return color.map((c) => {
     const baseColor = chroma(c);

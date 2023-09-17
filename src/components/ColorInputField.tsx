@@ -2,6 +2,9 @@ import React from 'react';
 import { Box, TextField, styled, InputLabel } from '@mui/material';
 import { SketchPicker } from 'react-color';
 
+/**
+ * スタイル定義
+ */
 const FlexBox = styled(Box)`
   display: flex;
   justify-content: space-between;
@@ -15,12 +18,21 @@ const StyledInputLabel = styled(InputLabel)`
   }
 `;
 
-interface Props {
-  color: string;
-  onChange: (color: string) => void;
+/**
+ * Propの型定義
+ */
+interface ColorInputFieldProps {
+  color: string; // 入力フィールドの現在の色
+  onChange: (color: string) => void; // 色が変更されたときの処理
 }
 
-const ColorInputField: React.FC<Props> = ({ color, onChange }) => {
+/**
+ * 色入力フィールドを表示するコンポーネント
+ */
+const ColorInputField: React.FC<ColorInputFieldProps> = ({
+  color,
+  onChange,
+}) => {
   return (
     <Box
       sx={{
