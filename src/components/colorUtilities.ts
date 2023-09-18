@@ -4,7 +4,7 @@ import chroma from 'chroma-js';
  * 色相調整値
  */
 const shades = {
-  main: 0,
+  main: 1,
   dark: -2,
   light: 1.25,
   lighter: 4,
@@ -15,10 +15,19 @@ const shades = {
  * @param {number} numColors - 生成する色の数
  * @return {string[]} 生成した色のリスト（HEX形式）
  */
-export const initialColors = (numColors: number): string[] =>
-  Array.from({ length: numColors }, (_, i) =>
-    chroma.hsl((i * 360) / numColors, 0.88, 0.38).hex()
-  );
+export const initialColors = (num, existingColors = []) => {
+  const colors = [];
+  const step = 360 / num; // Use a constant hue step
+  const baseHue =
+    existingColors.length > 0 ? chroma(existingColors[0]).get('hsl.h') : 0;
+
+  for (let i = 0; i < num; i++) {
+    colors.push(`hsl(${(baseHue + i * step) % 360}, 80%, 45%)`);
+  }
+
+  // Remove already existing colors
+  return colors.filter((color) => !existingColors.includes(color));
+};
 
 /**
  * カラーパレットを生成します。

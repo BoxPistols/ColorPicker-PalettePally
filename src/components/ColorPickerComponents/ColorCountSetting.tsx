@@ -29,10 +29,11 @@ const ColorCountSetting: React.FC<ColorCountSettingProps> = ({
 
   return (
     <Box sx={{ mb: 1, width: 100, marginRight: 2 }}>
-      <StyledInputLabel shrink={false} htmlFor="color-length">
+      {/* <StyledInputLabel shrink={true} htmlFor="color-length">
         カラー数↓↑
-      </StyledInputLabel>
+      </StyledInputLabel> */}
       <TextField
+        label="カラー数"
         size="small"
         id="color-length"
         value={numColors}

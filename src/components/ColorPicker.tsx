@@ -26,7 +26,7 @@ function ColorPicker() {
 
   return (
     <>
-      <Box sx={{ mb: 3 }}>
+      <Box sx={{ mb: 3, display: 'flex', alignItems: 'center' }}>
         <ColorCountSetting setNumColors={setNumColors} numColors={numColors} />
         <GeneratePaletteArea color={color} setPalette={setPalette} />
       </Box>
