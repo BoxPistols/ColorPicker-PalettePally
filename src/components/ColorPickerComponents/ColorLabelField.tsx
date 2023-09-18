@@ -15,7 +15,17 @@ const ColorLabelField: React.FC<ColorLabelFieldProps> = ({
     onChange(e.target.value);
   };
 
-  return <TextField value={label} onChange={handleLabelChange} />;
+  return (
+    <TextField
+      value={label}
+      onChange={handleLabelChange}
+      size="small"
+      sx={{
+        mb: 0.5,
+        width: '100%',
+      }}
+    />
+  );
 };
 
 export default ColorLabelField;
