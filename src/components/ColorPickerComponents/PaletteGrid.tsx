@@ -18,7 +18,7 @@ const PaletteGrid: React.FC<PaletteGridProps> = ({ palette }) => {
       {palette.map((c, i) => (
         <Grid
           item
-          xs={4}
+          xs={6}
           md={3}
           lg={2}
           key={i}
