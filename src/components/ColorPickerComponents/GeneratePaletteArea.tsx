@@ -19,7 +19,7 @@ const GeneratePaletteArea: React.FC<GeneratePaletteAreaProps> = ({
 
   return (
     <Button variant="contained" color="primary" onClick={handleGenerateClick}>
-      カラーパレット生成 / 再生成
+      カラーパレット生成/再生成
     </Button>
   );
 };
